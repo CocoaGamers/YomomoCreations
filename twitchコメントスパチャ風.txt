@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/*背景を非表示。*/
+body,
+.chat-room,
+.chat-line__moderation,
+.chat-line__status,
+.chat-author__display-name {
+  margin: 0 auto!important;
+  overflow: hidden!important;
+  font-weight: bold!important;
+  background-color: rgba(0,0,0,0)!important;
+  line-height:1.4;
+}
+
+/*その他余計な要素の非表示*/
+.stream-chat-header,
+.channel-leaderboard-container,
+.tw-interactable,
+.tw-z-default,
+.chat-input,
+.chat-line__status {
+  visibility: hidden!important;
+  display:none!important;
+  width: 0!important;
+  height: 0!important;
+  border: none!important;
+}
+
+/*チャットの背景。*/
+/*赤　10,000円～50,000円*/
+.chat-line__message:nth-child(1n) {
+  width: 400px;
+  margin: 10px 5px 0px 5px;
+  border-radius:10px;
+  background: linear-gradient(to bottom, #DE0707 0px, #DE0707 85px, #FC4D4D 85px, #FC4D4D 100%);
+}
+
+/*マゼンタ　5,000円～9,999円*/
+.chat-line__message:nth-child(2n) {
+  width: 400px;
+  margin: 10px 5px 0px 5px;
+  border-radius:10px;
+  background: linear-gradient(to bottom, #FF558D 0px, #FF558D 85px, #fe86ad 85px, #fe86ad 100%);
+}
+
+/*オレンジ　2,000￥～4,999円*/
+.chat-line__message:nth-child(3n) {
+  width: 400px;
+  margin: 10px 5px 0px 5px;
+  border-radius:10px;
+  background: linear-gradient(to bottom, #e75102 0px, #e75102 85px, #f67b02 85px, #f67b02 100%);
+}
+
+/*青　100円～199円*/
+.chat-line__message:nth-child(4n) {
+  width: 400px;
+  margin: 10px 5px 0px 5px;
+  border-radius:10px;
+  background: linear-gradient(to bottom, #1566c0 0px, #1566c0 85px, #3D86D8 85px, #3D86D8 100%);
+}
+
+/*チャットの横幅の最大値を設定。*/
+.chat-line-message-body {
+  max-width:400px;
+}
+
+/*チャットユーザー名の色を変える(現：白)*/
+.chat-author__display-name {
+  font-size:30px;
+  color:#ffffff !important;
+}
+
+/*ユーザーのバッジとチャットテキストのレイアウト*/
+.chat-line__username-container,
+.text-fragment {
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  flex-flow: column;
+}
+
+/*ユーザー名の下に疑似金額を表示*/
+/*赤　10,000円～50,000円*/
+.chat-line__message:nth-child(1n) span[class="chat-author__display-name"]::after {
+  display: block;
+  font-size:25px;
+  content: '￥50,000';
+}
+
+/*マゼンタ　5,000円～9,999円*/
+.chat-line__message:nth-child(2n) span[class="chat-author__display-name"]::after {
+  display: block;
+  font-size:25px;
+  content: '￥5,000';
+}
+
+/*オレンジ　2,000￥～4,999円*/
+.chat-line__message:nth-child(3n) span[class="chat-author__display-name"]::after {
+  display: block;
+  font-size:25px;
+  content: '￥3,000';
+}
+
+/*青　100円～199円*/
+.chat-line__message:nth-child(4n) span[class="chat-author__display-name"]::after {
+  display: block;
+  font-size:25px;
+  content: '￥150';
+}
+
+/*チャットテキストの設定*/
+.text-fragment {
+  display: flex;
+  padding: 20px 0px 10px 0px;
+  min-height:60px;
+  font-size:30px;
+  line-height:1;
+}
+
+/*ユーザーのバッジを非表示*/
+.chat-badge {
+  display: none !important;
+}
+
+/*ユーザー名とチャットテキストの間の"："を非表示*/
+span[aria-hidden="true"] {
+  display: none !important;
+  background-color:rgb(202,4,4);
+}
+
+/*チャットテキストの色(名前以外)*/
+.chat-line__no-background {
+  color:#ffffff !important;
+}
+
+/*白丸アイコン*/
+button[data-a-target="chat-badge"] {
+  width:50px;
+  height:50px;
+  width: auto!important;
+  color: #000000 !important;
+  margin: 10px 5px -10px 0;
+  padding: 10px 25px;
+  border-radius: 30px;
+  background-color: #ffffff;
+  float: left;
+}
